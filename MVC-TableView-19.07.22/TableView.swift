@@ -8,26 +8,24 @@
 import UIKit
 
 class TableView: UIView {
-
+    
     private var controller: ViewController?
     
     private lazy var tableView: UITableView = {
         let tableView = UITableView()
+        tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
-
+    
     init(controller: ViewController) {
         super.init(frame: .zero)
         self.controller = controller
         commonInit()
     }
-
+    
     required init?(coder: NSCoder) {
         super.init(coder: coder)
         commonInit()
-        setupHierarchy()
-        setupLayout()
-        
     }
     
     private func commonInit() {
@@ -35,6 +33,7 @@ class TableView: UIView {
         tableView.delegate = self
         tableView.dataSource = self
         setupHierarchy()
+        setupLayout()
     }
     
     private func setupHierarchy() {
@@ -49,7 +48,6 @@ class TableView: UIView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
-    
 }
 
 extension TableView: UITableViewDataSource {
@@ -59,14 +57,10 @@ extension TableView: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        
         cell.textLabel?.text = "Cell \(indexPath.row + 1)"
         return cell
     }
-    
-    
 }
 
 extension TableView: UITableViewDelegate {
-    
 }
