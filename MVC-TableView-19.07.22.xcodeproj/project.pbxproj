@@ -14,6 +14,7 @@
 		1297A14C2886DC9100935B25 /* MVC_TableView_19_07_22.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1297A14A2886DC9100935B25 /* MVC_TableView_19_07_22.xcdatamodeld */; };
 		1297A14E2886DC9F00935B25 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1297A14D2886DC9F00935B25 /* Assets.xcassets */; };
 		1297A1512886DC9F00935B25 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1297A14F2886DC9F00935B25 /* LaunchScreen.storyboard */; };
+		1297A1592886E2D300935B25 /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1297A1582886E2D300935B25 /* TableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		1297A14D2886DC9F00935B25 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1297A1502886DC9F00935B25 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1297A1522886DC9F00935B25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1297A1582886E2D300935B25 /* TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +63,7 @@
 				1297A1412886DC9100935B25 /* AppDelegate.swift */,
 				1297A1432886DC9100935B25 /* SceneDelegate.swift */,
 				1297A1452886DC9100935B25 /* ViewController.swift */,
+				1297A1582886E2D300935B25 /* TableView.swift */,
 				1297A1472886DC9100935B25 /* Main.storyboard */,
 				1297A14D2886DC9F00935B25 /* Assets.xcassets */,
 				1297A14F2886DC9F00935B25 /* LaunchScreen.storyboard */,
@@ -142,6 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1297A1462886DC9100935B25 /* ViewController.swift in Sources */,
+				1297A1592886E2D300935B25 /* TableView.swift in Sources */,
 				1297A14C2886DC9100935B25 /* MVC_TableView_19_07_22.xcdatamodeld in Sources */,
 				1297A1422886DC9100935B25 /* AppDelegate.swift in Sources */,
 				1297A1442886DC9100935B25 /* SceneDelegate.swift in Sources */,
