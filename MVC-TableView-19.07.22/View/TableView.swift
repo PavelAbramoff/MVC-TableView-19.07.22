@@ -9,6 +9,10 @@ import UIKit
 
 class TableView: UIView {
     
+    // MARK: - Element
+    
+    var model = Model.getModelList()
+    
     private var controller: ViewController?
     
     private lazy var tableView: UITableView = {
@@ -16,6 +20,8 @@ class TableView: UIView {
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    // MARK: - Lifecycle
     
     init(controller: ViewController) {
         super.init(frame: .zero)
@@ -28,10 +34,14 @@ class TableView: UIView {
         commonInit()
     }
     
+    // MARK: - public function
+    
     private func commonInit() {
+        tableView.backgroundColor = .init(patternImage: UIImage(named: "View")!)
         tableView.register(UITableViewCell.self,forCellReuseIdentifier: "cell")
         tableView.delegate = self
         tableView.dataSource = self
+        tableView.rowHeight = 100
         setupHierarchy()
         setupLayout()
     }
@@ -48,19 +58,39 @@ class TableView: UIView {
             tableView.trailingAnchor.constraint(equalTo: trailingAnchor)
         ])
     }
+    
+    // MARK: - public function
+    
+    func setupData(data: [Model]) {
+        model = data
+        tableView.reloadData()
+    }
 }
+
+// MARK: - UITableViewDataSource
 
 extension TableView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        model.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell", for: indexPath)
-        cell.textLabel?.text = "Cell \(indexPath.row + 1)"
+        let model = model[indexPath.row]
+        
+        var content = cell.defaultContentConfiguration()
+        content.text = model.name
+        content.secondaryText = model.image
+        content.image = UIImage(named: model.title)
+        content.imageProperties.cornerRadius = tableView.rowHeight / 2
+        
+        cell.contentConfiguration = content
+        
         return cell
     }
 }
+
+// MARK: - UITableViewDelegate
 
 extension TableView: UITableViewDelegate {
 }
